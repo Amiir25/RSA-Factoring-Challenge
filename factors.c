@@ -61,5 +61,6 @@ int main(int ac, char *av[])
 	while (fscanf(file, "%ld", &num) != EOF)
 		factorize(num);
 
+	fclose(file);
 	return (0);
 }
