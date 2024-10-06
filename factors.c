@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 /**
  * factorize - Factorizes a number into a product of two smaller numbers
@@ -11,8 +12,10 @@
 void factorize(long int num)
 {
 	long int i;
+	long int sqrt_num;
 
-	for (i = 2; i <= num / 2; i++)
+	sqrt_num = (long int)sqrt(num);
+	for (i = 2; i <= sqrt_num; i++)
 	{
 		if (num % i == 0)
 		{
