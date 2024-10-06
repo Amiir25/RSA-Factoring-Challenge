@@ -12,10 +12,8 @@
 void factorize(long int num)
 {
 	long int i;
-	long int sqrt_num;
 
-	sqrt_num = (long int)sqrt(num);
-	for (i = 2; i <= sqrt_num; i++)
+	for (i = 2; i <= num / 2; i++)
 	{
 		if (num % i == 0)
 		{
