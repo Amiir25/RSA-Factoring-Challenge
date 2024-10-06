@@ -15,7 +15,16 @@ void factorize(long int num)
 	int i;
 
 	factor1 = factor2 = 0;
-	for (i = 2; i * i <= num; i++)
+
+	if (num % 2 == 0)
+	{
+		factor1 = 2;
+		factor2 = num / 2;
+		printf("%ld=%ld*%ld\n", num, factor1, factor2);
+		return;
+	}
+
+	for (i = 3; i * i <= num; i++)
 	{
 		if (num % i == 0)
 		{
