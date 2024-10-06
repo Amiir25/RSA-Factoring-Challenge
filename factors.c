@@ -10,35 +10,18 @@
 
 void factorize(long int num)
 {
-	long int factor1;
-	long int factor2;
-	int i;
+	long int i;
 
-	factor1 = factor2 = 0;
-
-	if (num % 2 == 0)
-	{
-		factor1 = 2;
-		factor2 = num / 2;
-		printf("%ld=%ld*%ld\n", num, factor1, factor2);
-		return;
-	}
-
-	for (i = 3; i * i <= num; i++)
+	for (i = 2; i <= num / 2; i++)
 	{
 		if (num % i == 0)
 		{
-			factor1 = i;
-			factor2 = num / i;
-			break;
+			printf("%ld=%ld*%ld\n", num, i, num / 2);
+			return;
 		}
 	}
 
-	if (factor1 != 0)
-		printf("%ld=%ld*%ld\n", num, factor1, factor2);
-
-	else
-		printf("%ld=1*%ld\n", num, num);
+	printf("%ld=1*%ld\n", num, num);
 }
 
 /**
