@@ -35,7 +35,7 @@ void factorize(long int num)
 int main(int ac, char *av[])
 {
 	FILE *file;
-	long int num;
+	char line[256];
 
 	if (ac != 2)
 	{
@@ -50,8 +50,8 @@ int main(int ac, char *av[])
 		return (1);
 	}
 
-	while (fscanf(file, "%ld", &num) != EOF)
-		factorize(num);
+	while (fgets(line, sizeof(line), file))
+		factorize(atol(line));
 
 	fclose(file);
 	return (0);
